@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/storage.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+      <script type="text/javascript">
+      
+      function remove(){
+        $("#loading").hide()
+      }
+
+      function restore(){
+        $("#loading").hide();
+        Materialize.toast('Usuário adicionado com sucesso!', 4000)
+
+
+      }
+      function loading(){
+        $("#finish").remove();
+        $("#loading").show();
+        setTimeout(restore, 2000);
+        var delay=5000;
+        setTimeout(function() {
+          window.location="index.html"
+        }, delay);  
+
+      }
+      </script>
+
+    <header class="tinted-image z-depth-3">
+      <font style="font-size:30px" color="white"><center> PET LIFE <img src="assets/claw.png" width="25px"></center></font>
+    </header>
+
+    <body class="white darken-1 noscroll" style="background-color:white darken-2" onload="remove()">
+    	<h5 class="botoes center"> Registre o seu Petshop </h5>
+        <div class="row" style="margin-top: -70px;">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s10">
+            <input placeholder="Insira aqui" id="nome" type="text" class="validate">
+            <label for="nome">Nome do Petshop</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s8">
+            <input id="user" type="text" class="validate">
+            <label for="user">Usuário</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s8">
+            <input id="password" type="password" class="validate">
+            <label for="password">Senha</label>
+          </div>
+        </div>
+
+        <div class="row center"> 
+          <div class="col s12" id="finish" style="margin-top: 10px">
+            <a class="waves-effect waves-light btn" onclick="adicionar(),loading()" data-transition="pop" href="#loading" >Cadastrar</a>
+            <!--  <a class="waves-effect waves-light btn" onclick="ler()" >Mostrar</a> -->
+            <a class="waves-effect waves-light btn" onclick="limpar()" >Limpar</a>
+          </div>
+        </div>
+      </form>
+
+      <div id="loading" class="center" style="margin-top: 60px" >
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+
+
+  </html>
+        

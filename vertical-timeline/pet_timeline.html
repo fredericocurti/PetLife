@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="fonts/fonts.mi">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/giveinfo.js"></script>
+	<title>Histórico</title>
+
+
+</head>
+
+<body onload="appendevento();showinfo();">
+	<header id="headPet" class="petinfobg z-depth-1">
+		<div class="row">
+				<div class="col s6">
+					<div class="thumbnail" style="margin-left:10px; margin-top:20px">
+						<img id="showimg" style ="object-fit: cover;width:150px;height:150px" alt="Image" class="thumb1 responsive-img z-depth-2">
+					</div>
+				</div>
+				 
+				<div class="col s6">
+					<div class="card-panel z-depth-3 less" style="padding-top: 2px;">
+					<p class="black-text info petname"><b><script>document.write(indexes[choice][0]["Nome do Pet"]);</script></b>
+					</p>
+					<p class="black-text textinho" style="margin-top:-3px;"><script>document.write(indexes[choice][0]["Raça"] +" "+ indexes[choice][0]["Cor"]);</script></p>
+					<p class="textinho"><script>document.write(indexes[choice][0]["Nome do Cliente"]);</script>
+					</p>
+					<p class="textinho">Email: <script>document.write(indexes[choice][0]["Email"]);</script>
+					</p>
+					<p class="textinho">Telefone: <script>document.write(indexes[choice][0]["Telefone"]);</script>
+					</p>
+			    </div>
+				</div>
+			</div>
+	</header>
+
+<!-- BOTAO ADICIONAR OCORRENCIA -->
+<a class="btn-floating btn-small waves-effect waves-light green darken-4 addevent" href="#modal1"><img src="img/plus.png"></a>
+
+
+
+<!-- COMEÇO DA TIMELINE -->
+
+<!-- style="visibility:hidden;position:fixed;" -->
+	<div id="nenhumEvento">
+
+	</div>
+
+	<section id="cd-timeline" class="cd-container">
+		<p id="id"></p>
+
+
+	</section> <!-- cd-timeline -->
+
+	<div style="visibility: hidden; position: fixed;">
+		<div id="timeline-element" style="margin-bottom: 20px">
+			<div id="timeline" class="cd-timeline-block">
+				<div id="servbg" class="cd-timeline-img tosa">
+					<img id="servpic" alt="Picture">
+				</div>
+
+				<div id="paid" class="cd-timeline-content">
+					<h2 id="event-title" style="font-size:20px;margin-top:0px"> INSERIR TIPO DE SERVIÇO + DATA </h2>
+					<p id="descri"> INSERT BODY TEXT SCRIPT </p>
+					<span id="cd-date" class="cd-date">Pago ou não</span> 
+					<a  style= "float: right;" href="#modal2" data-target="modal2" class="waves-effect ed"><i class="material-icons right" style="margin: 10px; margin-top: 7px; margin-bottom: 7px;">mode_edit</i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+		  <!-- Modal Structure -->
+
+	<div id="addatividade">
+
+
+	<div id="modal2" class="modal bottom-sheet">
+		<div class="modal-content">
+			<h5>Controle</h5>
+			<div class="switch" style="position: float right;">
+			    <label>
+			      Em Aberto
+			      <input id="editpago" type="checkbox">
+			      <span class="lever leverbg"></span>
+			      Pago
+			    </label>
+			</div>
+			<div class="modal-footer">
+				<button class="waves-effect btn-flat" style="float: right;" onclick="$('#modal2').modal('close');editar();">Editar</button>
+			</div>
+		</div>
+	</div>
+
+		<div id="modal1" class="modal bottom-sheet">
+		    <div class="modal-content">
+		    <h4>Adicione uma atividade</h4>
+
+			<div class="row">
+				<div class="col s8">
+					<div class="input-field col s12">
+					<p class="textinho">Data</p>
+	                    <input id="eventdate" type="date" class="validate">
+	                    <script>document.getElementById('eventdate').valueAsDate = new Date();</script>
+	            	</div>
+	            </div>	
+			</div>
+
+	       	<div class="row" style="margin-bottom: 0px;">
+          	  	<div class="input-field col s12">
+				    <select id="servico">
+					    <option value="Banho">Banho</option>
+					    <option value="Tosa">Tosa</option>
+					    <option value="Veterinária">Veterinária</option>
+					    <option value="Compra de Produtos">Compra de produtos</option>
+					    <option value="Vários">Múltiplos</option>
+				    </select>
+				    <label>Serviço prestados</label>
+				</div>
+	   		</div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="descricao" type="text">
+                    <label for="descricao">Descrição do evento</label>
+            	</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="row">
+            	<div class="col s4">
+		            <div class="input-field">
+		                <input style="margin-top:10px;" placeholder="Preço (R$)" id="preco" type="number" class="validate s6">
+		            </div>
+		     
+		        </div>
+		        <div class="col s8">
+			        <div class="switch" style="margin-top:40px;">
+					    <label>
+					      Em Aberto
+					      <input id="pago" type="checkbox">
+					      <span class="lever leverbg"></span>
+					      Pago
+					    </label>
+					</div>
+       			</div>      
+            </div>
+		    <div class="modal-footer" style="margin-top:20px">
+		        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn green accent-3" onclick="cadastra_evento(indexes[choice][1]);appendevento(indexes[choice][1]);">Concluir</a>
+		        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+		    </div>
+	</div>
+
+
+
+
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<!-- <script src="js/main.js"></script> -->
+</body>
+</html>

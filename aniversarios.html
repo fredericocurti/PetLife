@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <link href="fonts/fonts.woff2">
+	  <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	  <script type="text/javascript" src="js/materialize.min.js"></script>
+	  <script type="text/javascript" src="js/adddog.js"></script>
+	</head>
+
+	<body>
+
+		<header class="upperbg z-depth-1">
+		  	<font color="white" style="font-size: 40px;"><center> Aniversários <img src="assets/gift.png" width="35px" style="padding-top: 0px;"></center></font>
+		</header>
+
+		<div class="container center" id="itensmenu" style="padding-top: 40px;">
+			<center>
+				  <div class="col s12 m7">
+				    <div class="card horizontal" style="height:82px">
+				      <div class="card-image">
+				        <img src="assets/url.jpg" style="object-fit: cover;width:82px;height:82px" alt="Image">
+				      </div>
+				      <div class="card-stacked" >
+				        <div class="card-content" style="padding: 5px; padding-top: 10px; padding-bottom: 10px;">
+				        	<div class="row" style="margin: 0px; padding-top: 7px;">
+				        		<center>
+					        		<div class="col s8">
+					        			 <p style="font-size:12px;"><center> Rufus faz aniversário hoje!</center></p>
+					        		</div>
+
+					        		<div class="col s4" style="padding: 0;" id="img1">
+					        			 <a class="waves-effect waves-light btn green darken-3 ed" href="#modal3" data-target="modal3" style="padding:5px;height:45px;"><img src="assets/gift.png" width="35px" style="padding-top: 0px; float: right;"></a>
+					        		</div>
+				        		</center>
+				        	</div>
+				        </div>
+				    
+				      </div>
+				    </div>
+				  </div>
+			
+
+				  <div class="col s12 m7">
+				    <div class="card horizontal" style="height:82px">
+				      <div class="card-image">
+				        <img src="assets/happy-dog.png" style="object-fit: cover;width:82px;height:82px" alt="Image">
+				      </div>
+				      <div class="card-stacked" >
+				        <div class="card-content" style="padding: 5px; padding-top: 10px; padding-bottom: 10px;">
+				        	<div class="row" style="margin: 0px; padding-top: 7px;">
+				        		<center>
+					        		<div class="col s8">
+					        			 <p style="font-size:12px;"><center>Rex faz aniversário hoje!</center></p>
+					        		</div>
+					        		<div class="col s4" style="padding: 0;" id="img2">
+					        			 <a class="waves-effect waves-light btn green darken-3 ed" href="#modal3" data-target="modal3" style="padding:5px;height:45px;"><img src="assets/gift.png" width="35px" style="padding-top: 0px; float: right;"></a>
+					        		</div>
+				        		</center>
+				        	</div>
+				        </div>
+				    
+				      </div>
+				    </div>
+				  </div>
+				  
+
+			</center>
+			
+		</div>
+
+		<div id="modal3" class="modal bottom-sheet">
+		    <div class="modal-content z-depth-3">
+
+				     <!-- <body class="white darken-1" style="background-color:white darken-2;"> -->
+				    	<h6 class="botoes center" style="margin-top: 0px; margin-bottom: 30px;"><b>Selecione um presente </b></h6>
+				  
+					        <div class="row" style="margin-bottom: 100px;">
+				          	  	<div class="input-field col s12">
+								    <select id="servico">
+									    <option value="Banho">Vale Banho</option>
+									    <option value="Tosa">Vale Tosa</option>
+									    <option value="Veterinária">R$30 em produtos da loja</option>
+								    </select>
+								    <label>Presentes</label>
+								</div>
+					   		</div>
+
+				       	<div class="modal-footer">
+      					<a href="#!" class="modal-action modal-close waves-effect waves-green btn green darken-2" onclick="Materialize.toast('Presente enviado com sucesso!', 4000);editarImg();">MANDAR PRESENTE</a>
+    					
+    					</div>
+
+				      	<div class="row center"> 
+				        	</div>
+				      </div>
+				      
+						    </div>
+		    <!-- <div class="modal-footer">
+		      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+		    </div> -->
+		  </div>
+		
+		<footer class="tinted-image">
+				<span style="color:white; font-size: 15px; margin-left:10px;"> Bem vindo, <script> document.write(localStorage.getItem("nome")) </script> </span>
+		</footer>
+
+	</body>
+
+</html>

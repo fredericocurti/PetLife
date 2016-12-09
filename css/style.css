@@ -1,0 +1,272 @@
+footer {
+    position:fixed;
+    height:23px;
+    background-color:green;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+}
+
+.thumb1 { 
+background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
+width: 250px;
+height: 250px;
+}
+
+.modal { width: 100% !important ; max-height: 90% !important } /* increase the width and height! */
+
+.petinfobg {
+  background-color: #ADCC55;
+  height: 150px;
+  position: fixed;
+  width: 100%;
+}
+
+.thumbnail {
+  position: relative;
+  width: 125px;
+  height: 125px;
+  overflow: hidden;
+}
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}
+
+.thumbpet {
+object-fit: cover;
+width:150px;
+height:120px;
+overflow:hidden;
+}
+
+
+.upperbg {
+  background-color: #ADCC55
+}
+
+
+
+.bggradient {
+    background: 
+      /* top, transparent green */
+      linear-gradient(
+        rgba(173,204,85, 1), 
+        rgba(46,125,50, 1)
+      ),
+}
+
+.plusbutton {
+    position: fixed;
+    z-index: 1;
+}
+
+.imginv {
+   -webkit-filter: invert(1);
+   filter: invert(1);
+   }
+
+.midtext center{
+	padding-top: 30px;
+}
+
+.noscroll {
+	overflow:hidden;
+}
+
+.botoes {
+	margin-top: 20px;
+}
+
+.textinho {
+  font-size: 12px;
+  color: #9E9E9E;
+}
+
+.homebg {
+	background-color: #ADCC55;
+	background-image: url("assets/happy-dog.png");
+	opacity:0.8;
+}
+
+.stdbg {
+  background-color: #
+
+}
+
+.tinted-image {
+  	background: 
+    	/* top, transparent green */
+    	linear-gradient(
+      	rgba(173,204,85, 1), 
+      	rgba(173,204,85, 0.01)
+    	),
+    	url("../assets/happy-dog.png");
+  	background-size: 920px;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.buttonposition {
+	margin-top: 40px;
+	margin-left:80px;
+}
+
+.buttonposition2 {
+	margin-top: 25px;
+	margin-left:60px;
+}
+
+$color: #ffffff;
+
+h1, input::-webkit-input-placeholder, button {
+  font-family: 'roboto', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  height: 100px;
+  width: 100%;
+  font-size: 18px;
+  background: darken($color, 4%);
+  color: white;
+  line-height: 150%;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+}
+
+form {
+  box-sizing: border-box;
+  width: 260px;
+  margin: 100px auto 0;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0);
+  padding-bottom: 40px;
+  border-radius: 3px;
+  h1 {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+}
+
+input {
+  margin: 40px 25px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 2px #000000;
+  transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $color 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: darken($color, 20%);
+  &:focus, &:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+    &::-webkit-input-placeholder {
+      color: #000000;
+      font-size: 11px;
+      transform: translateY(-20px);
+      visibility: visible !important;
+    }
+  }
+}
+
+button {
+  border: none;
+  background: green;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-left: 25px;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  &:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
+  }
+}
+
+.follow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+  background: #03A9F4;
+  display: inline-block;
+  margin: 50px calc(50% - 21px);
+  white-space: nowrap;
+  padding: 13px;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.2s ease;
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
+  i {
+    margin-right: 20px;
+    transition: margin-right 0.2s ease;
+  }
+  &:hover {
+    width: 134px;
+    transform: translateX(-50px);
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../fonts/fonts.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/*   .input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+   	 border-bottom: 2px solid #FFF
+   }*/
+=======
+	background-image: "assets\\happy-dog.jpg";
+	opacity:0.5;
+}
+
+.waves-effect {
+	background-color: green;
+}
+.finish {
+	padding-top: 2%;
+}
+>>>>>>> 3040d02ef0a134373732deabdbeef609b7db203b

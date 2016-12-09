@@ -1,0 +1,168 @@
+<html>
+    <head>
+      <link href="fonts/fonts.woff2">
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+      <script type="text/javascript">
+
+      </script>
+
+    </head>
+
+    <body onload="hideforms();remove();" class="tinted-image noscroll">
+
+        <script type="text/javascript">
+         var scrollSpeed = 70;
+         var current = 0;
+         var direction = 'h';
+         function bgscroll() {
+             current -= 1;
+             $('body').css("backgroundPosition", (direction == 'h') ? current + "px 0" : "0 " + current + "px");
+         }
+         setInterval("bgscroll()", scrollSpeed);
+
+        $('.modal').modal({
+            dismissible: true, // Modal can be dismissed by clicking outside of the modal
+            opacity: .5, // Opacity of modal background
+            in_duration: 200, // Transition in duration
+            out_duration: 200, // Transition out duration
+            starting_top: '100%', // Starting top style attribute
+            ending_top: '100%', // Ending top style attribute
+            ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+              alert("Ready");
+              console.log(modal, trigger);
+            },
+            complete: function() { alert('Closed'); } // Callback for Modal close
+          }
+        );
+
+
+        $(document).ready(function(){
+          $('.modal').modal();
+        });
+
+
+
+        function hideforms(){
+          $("#loginforms").hide();
+        }
+        function login(){
+          window.location.href = "home.html";
+          console.log("entrou");
+        }
+
+        function remove(){
+        $("#loading").hide()
+        }
+
+      function restore(){
+        $("#loading").hide();
+        Materialize.toast('Usuário adicionado com sucesso!', 4000)
+      }
+
+      function loading(){
+        $("#finish").remove();
+        $("#loading").show();
+        setTimeout(restore, 2000);
+        var delay=5000;
+        setTimeout(function() {
+          window.location="home.html"
+        }, delay);  
+
+      }
+
+      function register(){
+      z = $("#nome").val();
+        localStorage.setItem("nome",z);
+      }
+
+      </script>
+    	<header style="padding-top: 30px">
+      <img src="assets/claw.png" width="100px" class="center">
+      <font color="white" style="font-size: 40px;"><center> PET LIFE </center></font>
+    	</header>
+
+    	<h8 class="midtext" style="font-size: 20px; color:#ffffff"><center>Bem vindo ao PET LIFE, o seu<br>gerenciador de pets! </font></center></h8>
+
+      <div id="Buttons" class="botoes">
+        <a class="waves-effect waves-light btn-large green lighten-1 buttonposition" style="margin-left:60px; width: 235px;" href="#modal1" data-target="modal1"><i class="material-icons left" onclick="remove();">note_add</i>Novo usuário</a>
+        
+        <a id="existente" class="waves-effect waves-light btn-large green darken-4 buttonposition2"><i class="material-icons left">lock_open</i>Usuário existente</a>
+      </div>
+
+      <script>
+      $( "#existente" ).click(function() {
+        $("#loginforms").css("margin-top","20")
+        $( "#Buttons" ).hide( "slow" );
+        $( "h8" ).hide( "slow" );
+        // $("h8").css("display","none");
+        $("#loginforms").show()
+      });
+      </script>
+
+        <form id="loginforms" onsubmit="login();return false">
+          <input placeholder="Usuário" type="text" required="" style="border-bottom: 2px solid #ffffff; color: white;">
+          <input placeholder="Senha" type="password" required="" style="border-bottom: 2px solid #ffffff; color:white;">
+          <button>Entrar</button>
+        </form> 
+
+
+      <div id="modal1" style="max-height: 85% !important;" class="modal bottom-sheet">
+        <div class="modal-content z-depth-3">
+            <body class="white darken-1 noscroll" style="background-color:white darken-2;">
+                <h5 class="botoes center" style="margin-top: 0px"> Registre o seu Petshop </h5>
+                  <div class="row" style="margin-top: -70px;">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s10">
+                      <input placeholder="Insira aqui" id="nome" type="text" class="validate">
+                      <label for="nome">Nome do Petshop</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s8">
+                      <input id="user" type="text" class="validate">
+                      <label for="user">Usuário</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s8">
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Senha</label>
+                    </div>
+                  </div>
+
+                  <div class="row center"> 
+                    <div class="col s12" id="finish" style="margin-top: 10px">
+                      <a class="waves-effect waves-light btn-flat" onclick="loading();register();" data-transition="pop" href="#loading" >Cadastrar</a>
+                      <!--  <a class="waves-effect waves-light btn" onclick="ler()" >Mostrar</a> -->
+                      <a class="waves-effect waves-light btn-flat" onclick="limpar()" >Limpar</a>
+                    </div>
+                  </div>
+                </form>
+
+                <div id="loading" class="center" style="margin-top: 60px" >
+                  <div class="preloader-wrapper small active">
+                    <div class="spinner-layer spinner-green-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+      </div>
+    </body>
+        </div>
+      </div>
+      
+
+
+    </body>
+</html>    	
